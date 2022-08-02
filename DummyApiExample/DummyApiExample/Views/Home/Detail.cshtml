@@ -1,0 +1,94 @@
+﻿@model DummyApiExample.Models.UserFull
+
+@{
+    ViewBag.Title = "Detail";
+}
+
+<div class="container">
+    <div class="card-group">
+        <div class="card">
+            <img src="@Model.Picture" class="img-fluid rounded float-start">
+            <h1>@Model.Title @Model.FirstName @Model.LastName </h1>
+
+            <p @Model.Id></p>
+            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        </div>
+        <div class="card-body text-start">
+            <div class="row p-2 g-0">
+                <div class="col">
+                    <h5 class="card-title">Information: </h5>
+                    <table class="table table-stripped">
+                        <tr>
+                            <td>
+                            <strong>Phone:</strong>
+                            </td>
+                            <td>
+                                <a href="tel: @Model.Phone" class="text-decoration-none badge text-bg-primary">
+                                    <i class="bi bi-telephone-fill"></i>@Model.Phone
+                                </a>
+                            </td>
+                          </tr>
+                        <tr>
+                            <td>
+                                <strong>EMail:</strong>
+                            </td>
+                            <td>
+                                <a href="mailto:@Model.Email" class="text-decoration-none badge text-bg-primary">
+                                    <i class="bi bi-envelope-paper-heart-fill"></i> @Model.Email
+                                </a>
+                                  
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>Date Of Birth </strong>
+
+                            </td>
+                                <td>
+                                    @Model.DateOfBirth
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>Register Date</strong>
+                            </td>
+                            <td>
+                                @Model.RegisterDate
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>Location:</strong>
+                            </td>
+                            <td>
+                                <div class="card">
+                                    <div class="card-body">
+                                        <table class="table table-stripped">
+                                            <tr>
+                                                <td>Street: </td>
+                                                <td>@Model.Location.Street</td>
+                                            </tr>
+                                            <tr>
+                                                <td>City:</td>
+                                                <td>@Model.Location.City</td>
+                                            </tr>
+                                            <tr>
+                                                <td>State:</td>
+                                                <td>@Model.Location.State</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Country:</td>
+                                                <td>@Model.Location.Country</td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

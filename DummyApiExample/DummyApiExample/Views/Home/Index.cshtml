@@ -1,0 +1,71 @@
+﻿@model DummyApiExample.Models.UserList
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="container">
+    <div class="row ">
+        <div class="col">
+            <div class="card ">
+                <div class="card-header">
+                    <h3>User List</h3>
+                </div>
+                <div class="card-body">
+                    <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4">
+
+                        @foreach (var item in Model.Data)
+                       
+                        {
+                            <div class="border 2px solid">
+                                <div class="col">
+                                    <div class="col-4">
+                                        <img src="@item.Picture" class="rounded-start" height="100">
+                                    </div>
+                                    <div class="col-8">
+                                        <div class="card-body">
+                                            <div class="border 2px solid">
+                                                <h6 class="card-title">@item.Id</h6>
+                                            </div>
+                                            <div class="border 2px solid">
+                                                <p class="card-text"> @item.Title @item.FirstName @item.LastName </p>
+                                                <div class="d-grid gap-2 d-md-block">
+                                                    @*<button class="btn btn-primary" type="button">Detay</button>
+                                                </div>*@
+                                                    <button style="background-color:cadetblue;color:white;width:100%;">
+                                                         @Html.ActionLink("Detay", "Detail", "Home", new { @Id = item.Id }, new { @class = "btn btn-sm btn-primary- float-end" })
+                                                        <button>
+</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                               
+                            </div>
+                        }
+                            <div class="card-footer">
+                                <span class="badge badge-lg text-bg-success">
+                                    Total:
+                                    <span class="badge text-bg-light">
+                                        @Model.Total
+                                    </span>
+                                </span>
+                                <span class="badge badge-lg text-bg-primary">
+                                    Page:
+                                    <span class="badge text-bg-light">
+                                        @Model.Page
+                                    </span>
+                                </span>
+                                <span class="badge badge-lg text-bg-light">
+                                    Limit:
+                                    <span class="badge text-bg-light">
+                                        @Model.Limit
+                                    </span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+      </div>     
+</div>
+
